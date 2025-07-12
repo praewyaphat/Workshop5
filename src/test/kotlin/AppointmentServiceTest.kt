@@ -23,8 +23,8 @@ class AppointmentServiceTest {
 
         // เตรียมข้อมูลนัดหมาย
         val appointment = Appointment(
-            clientName = "John Doe",
-            clientEmail = "john@example.com",
+            clientName = "Bookbig",
+            clientEmail = "bookbig@example.com",
             appointmentTime = "2025-07-13T14:00:00Z",
             serviceId = savedService.id
         )
@@ -43,19 +43,20 @@ class AppointmentServiceTest {
 
         // นัดหมายแรก
         val appointment1 = Appointment(
-            clientName = "John Doe",
-            clientEmail = "john@example.com",
+            clientName = "Praew",
+            clientEmail = "praew@example.com",
             appointmentTime = "2025-07-13T14:00:00Z",
             serviceId = savedService.id
         )
+
         val res1 = appointmentService.createAppointment(appointment1)
         assertNotNull(res1.getOrNull())
 
         // นัดหมายที่ทับซ้อน (ช่วงเวลาเดียวกัน)
         val appointment2 = Appointment(
-            clientName = "Jane Smith",
-            clientEmail = "jane@example.com",
-            appointmentTime = "2025-07-13T14:30:00Z",  // ทับซ้อน เพราะช่วงเวลา 14:00-15:00
+            clientName = "King",
+            clientEmail = "king@example.com",
+            appointmentTime = "2025-07-13T14:00:00Z", //เวลาชน!!
             serviceId = savedService.id
         )
 
